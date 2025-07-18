@@ -1,0 +1,13 @@
+/* Add here all your CSS customizations */
+#toplevel_page_revo-apps-setting .wp-menu-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#toplevel_page_revo-apps-setting .wp-menu-image img {
+    padding-top: 0 !important;
+    border: none !important;
+    width: 23px !important;
+    height: 23px !important;
+}

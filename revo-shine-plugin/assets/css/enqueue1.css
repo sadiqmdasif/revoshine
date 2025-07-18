@@ -1,0 +1,11 @@
+.site-header,
+#secondary,
+nav,
+footer {
+  display: none !important;
+}
+
+.mobile-bottom-nav,
+.myaccount-greeting-card {
+  display: none !important;
+}

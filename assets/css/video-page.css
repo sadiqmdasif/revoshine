@@ -1,0 +1,353 @@
+/* CSS styling */
+
+:root {
+  --control-background: #444;
+  --control-buttons: #55ff63;
+  --control-track: #95989a;
+}
+
+body {
+  margin: 0;
+}
+
+.video-element {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background: black;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-element .video-logo {
+  position: absolute;
+  width: 15%;
+  margin: 20px;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 5px #444);
+}
+
+.video-element .video-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #55ff63;
+  justify-content: center;
+  align-items: center;
+  font-size: 8rem;
+  background: #44444480;
+  z-index: 10;
+  transition: 0.2s;
+}
+
+.video-element video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.video-element .control-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--control-background);
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.video-element .control-box .play-pause,
+.video-element .control-box .full-screen,
+.video-element .control-box .mute-button {
+  height: 100%;
+  background: no-repeat;
+  border: none;
+  box-sizing: border-box;
+  padding: 10px;
+  color: var(--control-buttons);
+  outline: none;
+  transition: 0.2s;
+  margin: 0 0 0 10px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.video-element .control-box .play-pause:hover,
+.video-element .control-box .mute-button:hover,
+.video-element .control-box .full-screen:hover {
+  background: var(--control-buttons);
+  color: white;
+}
+
+.video-element .control-box .progress-slider {
+  width: 80%;
+  cursor: pointer;
+}
+
+.video-element .control-box .completed-track {
+  height: 3px;
+  width: 0;
+  background: var(--control-buttons);
+  position: absolute;
+  left: 40px;
+}
+
+.time-duration {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 5px;
+  font-family: monospace;
+  color: var(--control-buttons);
+}
+
+.video-element .control-box .volume-button {
+  width: 8%;
+  position: relative;
+  right: 10px;
+  cursor: pointer;
+}
+
+.video-element .control-box .present-volume {
+  height: 3px;
+  width: 0;
+  background: var(--control-buttons);
+  position: absolute;
+  right: 30px;
+  transform-origin: left;
+}
+
+video::-moz-focus-outer,
+input::-moz-focus-outer,
+button::-moz-focus-outer {
+  border: 0;
+}
+
+/* Range styling */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--control-buttons);
+  border-radius: 50%;
+  margin-top: -8.5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--control-buttons);
+  border-radius: 50%;
+  border: none;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--control-buttons);
+  border-radius: 50%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-mo-range-track,
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 3px;
+  background: var(--control-track);
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: var(--control-buttons);
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: var(--control-track);
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .video-element .control-box {
+    height: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-element .control-box {
+    height: 15%;
+  }
+}
+
+.icon_fontawesome {
+  font-size: 24px;
+}
+
+.revo-profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.revo-flex-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.revo-profile-picture {
+  height: 3rem;
+  width: 3rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.revo-profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.revo-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.revo-profile-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-transform: capitalize;
+}
+
+.revo-profile-role {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.revo-post-container {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1rem;
+}
+
+.revo-video-container {
+  width: 100%;
+  height: auto;
+}
+
+.revo-my-video {
+  width: 100%;
+  height: auto;
+}
+
+.revo-post-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.revo-wrap-desc {
+  flex-basis: calc((100% - 3rem) / 4);
+  flex-grow: 0;
+  max-width: calc((100% - 3rem) / 4);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.revo-post-title {
+  font-weight: 600;
+  line-clamp: 2;
+}
+
+.revo-post-description {
+  line-clamp: 6;
+}
+
+.revo-post-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.revo-action-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.revo-iconsax {
+  font-size: 2rem;
+}
+
+.revo-action-count {
+  font-weight: 500;
+  font-size: 1rem;
+}
